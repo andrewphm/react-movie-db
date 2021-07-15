@@ -6,7 +6,7 @@ import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config'
 // Components
 
 // Hook
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Image
 import NoImage from '../images/no_image.jpg'
