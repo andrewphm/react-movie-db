@@ -27,4 +27,6 @@ Movie DB TODOs
     - [x] Import rmdb and tmdb logos
     - [x] Create header styles in separate index.js file
 
--
+- [x] Create Home Component
+    - [x] Import styling, hooks, and images
+    - [x] Export to main App
