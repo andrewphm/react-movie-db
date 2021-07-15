@@ -31,3 +31,4 @@ Movie DB TODOs
     - [x] Import styling, hooks, and images
     - [x] Export to main App
     - [x] Setup and test the fetch API for the homepage
+    - [x] Create custom hook to fetch API
