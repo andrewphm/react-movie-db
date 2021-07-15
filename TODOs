@@ -1,0 +1,22 @@
+Movie DB TODOs
+
+- [x] Setup project
+    - [x] Bootstrap using CRA
+    - [x] Install dependencies
+        - [x] React Router
+        - [x] Styled Components
+        - [x] prop-types
+    - [x] Create environmental variable for API key
+    - [x] Create config.js for confirguration for the TMDB API
+        - [x] API end points
+        - [x] API URL and API key
+        - [x] Request token URL
+        - [x] Login URL
+        - [x] Session ID URL 
+        - [x] Image Base URL
+        - [x] Background size
+        - [x] Poster size
+    - [x] Create API file for the API fetch/calls
+    - [x] Create helper functions
+        - [x] Convert time to hours and minutes
+        - [x] Convert a number to money US format
