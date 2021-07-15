@@ -21,7 +21,6 @@ export const Wrapper = styled.div`
             opacity: 1;
         }
     }
-
 `;
 
 export const Content = styled.div`
@@ -58,5 +57,4 @@ export const Text = styled.div`
     @media screen and (max-width: 720px) {
         max-width: 100%;
     }
-
 `;

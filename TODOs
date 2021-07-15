@@ -35,5 +35,13 @@ Movie DB TODOs
 
 - [x] Create Hero Image Component
     - [x] Create styles 
+        - [x] Wrapper  
+        - [x] Content
+        - [x] Text
     - [x] Map it to the home component
     - [x] Use custom hook to feed props back to Hero Image from home component
+
+- [x] Create Grid component
+    - [x] Create Grid styles
+    - [x] Map grid to Home component
+    - [x] 
