@@ -20,3 +20,11 @@ Movie DB TODOs
     - [x] Create helper functions
         - [x] Convert time to hours and minutes
         - [x] Convert a number to money US format
+
+- [x] Create Global Styles
+
+- [x] Create Header Component
+    - [x] Import rmdb and tmdb logos
+    - [x] Create header styles in separate index.js file
+
+-
