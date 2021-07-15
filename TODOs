@@ -32,3 +32,8 @@ Movie DB TODOs
     - [x] Export to main App
     - [x] Setup and test the fetch API for the homepage
     - [x] Create custom hook to fetch API
+
+- [x] Create Hero Image Component
+    - [x] Create styles 
+    - [x] Map it to the home component
+    - [x] Use custom hook to feed props back to Hero Image from home component
