@@ -90,3 +90,9 @@ Movie DB TODOs
 - [x] Create BreadCrump component
     - [x] Create index and styles
     - [x] Pass in the movie title as a prop
+
+- [x] Create MovieInfo component
+    - [x] Create scaffolding for index and styles
+    - [x] Map to our Movie page component
+    - [x] Pass in the movie prop
+    - [x] Render out the title, overview, rating, and director
