@@ -7,11 +7,13 @@ import HeroImage from './HeroImage'
 import Grid from './Grid'
 import Thumb from './Thumb'
 import Spinner from './Spinner'
+import SearchBar from './SearchBar'
 
 // Custom Hook
 import { useHomeFetch } from '../hooks/useHomeFetch';
 // Image
 import NoImage from '../images/no_image.jpg'
+
 
 const Home = () => {
 
@@ -29,6 +31,7 @@ const Home = () => {
         />
        ) : null}
 
+       <SearchBar/>
        <Grid header='Popular Movies'>
            {state.results.map(movie => (
                 <Thumb
