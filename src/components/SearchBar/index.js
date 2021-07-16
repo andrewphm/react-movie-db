@@ -13,6 +13,7 @@ const SearchBar = ({ setSearchTerm }) => {
     const initial = useRef(true);
 
     
+    console.log(state)
 
     useEffect(() => {
         // To skip the initial useEffect on render
@@ -20,7 +21,7 @@ const SearchBar = ({ setSearchTerm }) => {
             initial.current = false
             return;
         }
-
+        console.log('useEffect trigger')
         const timer = setTimeout(() => {
             setSearchTerm(state);
         }, 500)

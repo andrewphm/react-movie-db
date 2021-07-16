@@ -63,6 +63,7 @@ Movie DB TODOs
         - [x] Input field always has same value as the state. State synced with input field.
     - [x] Create new searchTerm state in useHomeFetch to trigger the hook
     - [x] Create a timer that sets searchTerm with state after 500ms
+    - [x] Create logical operator if searchTerm exists, change header and remove hero image
 
 
 
