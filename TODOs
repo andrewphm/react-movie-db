@@ -45,3 +45,11 @@ Movie DB TODOs
     - [x] Create Grid styles
     - [x] Map grid to Home component
     - [x] 
+
+- [x] Create Thumbnail component
+    - [x] Create styled component for thumbnail
+    - [x] Map thumbnail inside of Grid
+    - [x] Send props(image src) back to Thumb component
+
+-[x] Create Spinner component
+
