@@ -83,3 +83,10 @@ Movie DB TODOs
     - [x] Create a route for Home, Movie, and Not Found
     - [x] Create Link route for the header logo
     - [x] Create a Link routing for the thumbnails
+
+- [x] Create new custom hook useMovieFetch
+    - [x] Use API to fetch the Movie, Credits, and Directors
+
+- [x] Create BreadCrump component
+    - [x] Create index and styles
+    - [x] Pass in the movie title as a prop
