@@ -59,4 +59,11 @@ Movie DB TODOs
     - [x] Import search icon svg
     - [x] Import useEffect, useState, useRef
     - [x] Map to the Home component
+    - [x] Make it a controlled component
+        - [x] Input field always has same value as the state. State synced with input field.
+    - [x] Create new searchTerm state in useHomeFetch to trigger the hook
+    - [x] Create a timer that sets searchTerm with state after 500ms
+
+
+
 
