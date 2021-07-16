@@ -65,6 +65,8 @@ Movie DB TODOs
     - [x] Create a timer that sets searchTerm with state after 500ms
     - [x] Create logical operator if searchTerm exists, change header and remove hero image
 
-
-
+- [x] Create Load More button component 
+    - [x] Create index and Styles
+    - [x] Map to Home component
+    - [x] Apply short circuit to only render if not loading
 
