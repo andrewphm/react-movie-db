@@ -72,3 +72,14 @@ Movie DB TODOs
     - [x] Create fetch logic to load more movies
         - [x] onClick change setIsLoadingMore to true
 
+- [x] Create Movie component page
+
+- [x] Create Not Found component page
+
+
+- [x] Create Routing with React Router
+    - [x] Import BrowserRouter, Routes, and Route modules
+    - [x] Wrap the App in BrowserRouter
+    - [x] Create a route for Home, Movie, and Not Found
+    - [x] Create Link route for the header logo
+    - [x] Create a Link routing for the thumbnails
