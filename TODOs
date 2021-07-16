@@ -69,4 +69,6 @@ Movie DB TODOs
     - [x] Create index and Styles
     - [x] Map to Home component
     - [x] Apply short circuit to only render if not loading
+    - [x] Create fetch logic to load more movies
+        - [x] onClick change setIsLoadingMore to true
 
