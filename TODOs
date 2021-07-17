@@ -96,3 +96,7 @@ Movie DB TODOs
     - [x] Map to our Movie page component
     - [x] Pass in the movie prop
     - [x] Render out the title, overview, rating, and director
+
+- [x] Create MovieInfoBar Component
+    - [x] Create styles and scaffolding
+    - [x] Map to the Movie page component
