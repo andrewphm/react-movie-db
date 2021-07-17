@@ -105,3 +105,5 @@ Movie DB TODOs
     - [x] Create index that displays image, name, and character
     - [x] Create styles
     - [x] Map to Movie component page, inside a grid component.
+    - [x] iterate over actors to send back props to Actor component
+

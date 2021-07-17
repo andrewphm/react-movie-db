@@ -10,7 +10,6 @@ export const Wrapper = styled.div`
         : '#000'
     };
     background-size: cover;
-    background-postion: center;
     padding: 40px 20px;
     animation: animateMovieInfo 1s;
 
