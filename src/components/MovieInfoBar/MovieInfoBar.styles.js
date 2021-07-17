@@ -13,6 +13,7 @@ export const Content = styled.div`
     max-width: var(--maxWidth);
     width: 100%;
     margin: 0 auto;
+    color: var(--white);
 
     .column {
         display: flex;
