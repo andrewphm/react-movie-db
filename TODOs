@@ -107,3 +107,4 @@ Movie DB TODOs
     - [x] Map to Movie component page, inside a grid component.
     - [x] iterate over actors to send back props to Actor component
 
+- [x] Create Session storage states for Home page and Movie page
