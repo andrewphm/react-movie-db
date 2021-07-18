@@ -16,7 +16,7 @@ import { GlobalStyle } from './GlobalStyle';
 
 
 const App = () => (
-    <HashRouter basename='/'>
+    <Router basename='/'>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -25,7 +25,7 @@ const App = () => (
 
       </Routes>
       <GlobalStyle />
-    </HashRouter>
+    </Router>
 );
 
 
