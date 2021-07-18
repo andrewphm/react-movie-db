@@ -108,3 +108,12 @@ Movie DB TODOs
     - [x] iterate over actors to send back props to Actor component
 
 - [x] Create Session storage states for Home page and Movie page
+
+- [ ] Implement a login and Rating system
+
+- [ ] Login Component
+    - [ ] Login Component Styles
+    - [ ] Login from Header
+
+- [ ] Rate Component
+    - [ ] Rate from MovieInfo component

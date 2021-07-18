@@ -1,5 +1,6 @@
-[View Live](https://focused-yalow-714671.netlify.app/)
+[View Live](http://andrewpham.ca/react-movie-db)
 
+<img src="/preview.png" alt="preview"/>
 
 # Getting Started with Create React App
 
