@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Routing
-import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 
 // Components
 import Header from './components/Header';
@@ -16,10 +16,10 @@ import { GlobalStyle } from './GlobalStyle';
 
 
 const App = () => (
-    <Router basename='/'>
+    <Router>
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/react-movie-db' element={<Home />} />
         <Route path='/:movieId' element={<Movie/>} />
         <Route path='/*' element={<NotFound/>} />
 
