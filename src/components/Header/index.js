@@ -15,7 +15,7 @@ const Header = () => (
             <Link to='/react-movie-db'>
                 <LogoImg src={RMDBLogo} alt='rmdb-logo' />
             </Link>
-            <TMDBLogoImg src={TMDBLogo} alt='tmdb-logo' />
+            <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer"><TMDBLogoImg src={TMDBLogo} alt='tmdb-logo' /></a>
         </Content>
     </Wrapper>
 )

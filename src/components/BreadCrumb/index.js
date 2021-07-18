@@ -9,7 +9,7 @@ import { Wrapper, Content } from './BreadCrumb.styles';
 const BreadCrumb = ({ movieTitle }) => (
     <Wrapper>
         <Content>
-            <Link to='/'>
+            <Link to='/react-movie-db'>
                 <span>Home</span>
             </Link>
             <span>|</span>
