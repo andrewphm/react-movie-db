@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // Components
@@ -59,7 +60,7 @@ const MovieInfo = ({ movie }) => {
               <Rate />
             </div>
           ) : (
-            <a href="/login">Login to leave a rating!</a>
+            <Link to="/login">Login to leave a rating!</Link>
           )}
         </Text>
       </Content>
