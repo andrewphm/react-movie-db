@@ -1,53 +1,49 @@
 import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 // Image
-import searchIcon from '../../images/search-icon.svg'
+import searchIcon from '../../images/search-icon.svg';
 
 // Styles
-import { Wrapper, Content } from './SearchBar.styles'
-
+import { Wrapper, Content } from './SearchBar.styles';
 
 const SearchBar = ({ setSearchTerm }) => {
-    const [state, setState] = useState('');
-    // Using useRef to skip initial useEffect on render
-    const initial = useRef(true);
+  const [state, setState] = useState('');
+  // Using useRef to skip initial useEffect on render
+  const initial = useRef(true);
 
-    
-    console.log(state)
+  useEffect(() => {
+    // To skip the initial useEffect on render
+    if (initial.current) {
+      initial.current = false;
+      return;
+    }
 
-    useEffect(() => {
-        // To skip the initial useEffect on render
-        if (initial.current) {
-            initial.current = false
-            return;
-        }
-        console.log('useEffect trigger')
-        const timer = setTimeout(() => {
-            setSearchTerm(state);
-        }, 500)
+    const timer = setTimeout(() => {
+      setSearchTerm(state);
+    }, 500);
 
-        return () => clearTimeout(timer);
-    },[setSearchTerm, state])
+    return () => clearTimeout(timer);
+  }, [setSearchTerm, state]);
 
-    return (
-        <Wrapper>
-            <Content>
-                <img src={searchIcon} alt='search-icon'/>
-                <input
-                    type='text'
-                    placeholder='Search Movie'
-                    // Using inline function to pass the value to the state
-                    onChange={event => setState(event.currentTarget.value)}
-                    value={state}
-                />
-            </Content>
-        </Wrapper>
-    )
-}
+  return (
+    <Wrapper>
+      <Content>
+        <img src={searchIcon} alt="search-icon" />
+        <input
+          type="text"
+          placeholder="Search Movie"
+          // Using inline function to pass the value to the state
+          onChange={(event) => setState(event.currentTarget.value)}
+          value={state}
+        />
+      </Content>
+    </Wrapper>
+  );
+};
 
 SearchBar.propTypes = {
-    callback: PropTypes.func
-}
+  callback: PropTypes.func,
+};
 
 export default SearchBar;

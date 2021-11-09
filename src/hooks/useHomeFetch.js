@@ -1,80 +1,74 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 // API
-import API from '../API'
+import API from '../API';
 
 // Helpers
-import { isPersistedState } from '../helpers'
+import { isPersistedState } from '../helpers';
 
 const initialState = {
-    page: 0,
-    results: [],
-    total_pages: 0,
-    total_results: 0
-}
+  page: 0,
+  results: [],
+  total_pages: 0,
+  total_results: 0,
+};
 
 export const useHomeFetch = () => {
-    const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
-    // State to hold all the movies
-    const [state, setState] = useState(initialState);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false);
+  // State to hold all the movies
+  const [state, setState] = useState(initialState);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
-    // Triggered by the button
-    const [isLoadingMore, setIsLoadingMore] = useState(false);
+  // Triggered by the button
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
 
-   
+  const fetchMovies = async (page, searchTerm = '') => {
+    try {
+      setError(false);
+      setLoading(true);
 
-    const fetchMovies = async (page, searchTerm = "") => {
-        try {
-            setError(false);
-            setLoading(true);
+      const movies = await API.fetchMovies(searchTerm, page);
 
-            const movies = await API.fetchMovies(searchTerm, page);
+      setState((prev) => ({
+        ...movies,
+        results:
+          page > 1 ? [...prev.results, ...movies.results] : [...movies.results],
+      }));
+    } catch (error) {
+      setError(true);
+    }
 
-            setState(prev => ({
-                ...movies,
-                results: page > 1 ? [...prev.results, ...movies.results] : [...movies.results]
-            }));
-        } catch (error) {
-            setError(true);
-        }
+    setLoading(false);
+  };
 
-        setLoading(false);
-    } 
+  // Initial and search
+  useEffect(() => {
+    if (!searchTerm) {
+      const sessionState = isPersistedState('homeState');
 
-    // Initial and search
-    useEffect(() => {
-        if (!searchTerm) {
-            const sessionState = isPersistedState('homeState');
+      if (sessionState) {
+        setState(sessionState);
+        return;
+      }
+    }
 
-            if (sessionState) {
-                console.log('Grabbing from sessionStorage')
-                setState(sessionState)
-                return;
-            }
-        }
+    setState(initialState);
+    fetchMovies(1, searchTerm);
+  }, [searchTerm]);
 
-        console.log('Grabbing from api')
-        setState(initialState)
-        fetchMovies(1, searchTerm)
-    }, [searchTerm])
-    
-    // Load More
-    useEffect(() => {
-        if(!isLoadingMore) return;
+  // Load More
+  useEffect(() => {
+    if (!isLoadingMore) return;
 
-        fetchMovies(state.page + 1, searchTerm);
-        setIsLoadingMore(false);
+    fetchMovies(state.page + 1, searchTerm);
+    setIsLoadingMore(false);
+  }, [isLoadingMore, state.page, searchTerm]);
 
-    }, [isLoadingMore, state.page, searchTerm])
+  // Write to sessionStorage
+  useEffect(() => {
+    if (!searchTerm) sessionStorage.setItem('homeState', JSON.stringify(state));
+  }, [searchTerm, state]);
 
-    // Write to sessionStorage
-    useEffect(() => {
-        if (!searchTerm) sessionStorage.setItem('homeState', JSON.stringify(state));
-
-    }, [searchTerm, state])
-
-
-    return { state, loading, error, setSearchTerm, searchTerm, setIsLoadingMore };
-}
+  return { state, loading, error, setSearchTerm, searchTerm, setIsLoadingMore };
+};

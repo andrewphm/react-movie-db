@@ -17,21 +17,35 @@ const Login = () => {
   const [login, setLogin] = useState(initialState);
   const [error, setError] = useState(false);
 
-  const [_user, setUser] = useContext(Context);
+  const [user, setUser] = useContext(Context);
   const navigate = useNavigate();
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     setError(false);
     const { username, password } = login;
     try {
+      // Demo account
+      if (e.target.innerText === 'Demo login') {
+        const demoUser = 'gramsay';
+        const demoPassword = process.env.REACT_APP_DEMO_PASSWORD;
+        const requestToken = await API.getRequestToken();
+        const sessionId = await API.authenticate(
+          requestToken,
+          demoUser,
+          demoPassword
+        );
+        await setUser({ sessionId: sessionId.session_id, username: demoUser });
+
+        navigate('/react-movie-db');
+        return;
+      }
+
       const requestToken = await API.getRequestToken();
       const sessionId = await API.authenticate(
         requestToken,
         username,
         password
       );
-
-      console.log(sessionId);
       setUser({ sessionId: sessionId.session_id, username });
 
       navigate('/react-movie-db');
@@ -66,6 +80,7 @@ const Login = () => {
         required
       />
       <Button text="Login" callback={handleSubmit} />
+      <Button name="demo" text="Demo login" callback={handleSubmit} />
     </Wrapper>
   );
 };
