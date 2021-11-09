@@ -9,18 +9,23 @@ import Home from './components/Home';
 import Movie from './components/Movie';
 import NotFound from './components/NotFound';
 
+// Context
+import UserProvider from './context';
+
 // Styles
 import { GlobalStyle } from './GlobalStyle';
 
 const App = () => (
   <Router>
-    <Header />
-    <Routes>
-      <Route path="/react-movie-db" element={<Home />} />
-      <Route path="/:movieId" element={<Movie />} />
-      <Route path="/*" element={<NotFound />} />
-    </Routes>
-    <GlobalStyle />
+    <UserProvider>
+      <Header />
+      <Routes>
+        <Route path="/react-movie-db" element={<Home />} />
+        <Route path="/:movieId" element={<Movie />} />
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
+      <GlobalStyle />
+    </UserProvider>
   </Router>
 );
 

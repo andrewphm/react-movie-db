@@ -8,7 +8,6 @@
 
 ## Features
 
-- Powered by [TMDB](https://www.themoviedb.org/) API
 - Renders out list of the recent most popular movies.
 - Render data fetched by the API. Images, directors, actors, budget, gross.
 - Search bar to search movies.
@@ -18,6 +17,7 @@
 
 ## Built With
 
+- Powered by [TMDB](https://www.themoviedb.org/) API
 - Functional components
 - React hooks
 - React Router
@@ -37,7 +37,7 @@ react-rmdb/src/
 ├── components      # UI functional components
 ├── hooks           # Custom hooks
 ├── images          # Logos
-├── API.js          # Different API endpoints
+├── API.js          # API calls
 ├── helpers.js      # Helper functions
 ├
 ```
