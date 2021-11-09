@@ -1,13 +1,12 @@
 // Convert time to hours and minutes
-export const calcTime = time => {
+export const calcTime = (time) => {
   const hours = Math.floor(time / 60);
   const mins = time % 60;
   return `${hours}h ${mins}m`;
 };
 
-
 // Convert a number to money formatting
-export const convertMoney = money => {
+export const convertMoney = (money) => {
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -16,8 +15,8 @@ export const convertMoney = money => {
   return formatter.format(money);
 };
 
-
-export const isPersistedState = stateName => {
+// Checks to see if there is movie data saved in session storage
+export const isPersistedState = (stateName) => {
   const sessionState = sessionStorage.getItem(stateName);
   return sessionState && JSON.parse(sessionState);
 };
