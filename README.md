@@ -2,12 +2,13 @@
 
 [View Live](http://andrewpham.ca/react-movie-db)
 
-Preivew
-<img src="/preview.png" alt="preview"/>
+<a href="http://andrewpham.ca/react-movie-db">
+<img src="/preview.png" alt="preview" width=500 height=460/> 
+</a>
 
 ## Features
 
-- Utilizing [TMDB](https://www.themoviedb.org/) API
+- Powered by [TMDB](https://www.themoviedb.org/) API
 - Renders out list of the recent most popular movies.
 - Render data fetched by the API. Images, directors, actors, budget, gross.
 - Search bar to search movies.
@@ -24,7 +25,10 @@ Preivew
 - PropTypes
 - CSS grid/flex
 
-<a href="/TODOs">View check list</a>
+## Insights
+
+- Improved optimization: Successful api responses are saved in session storage. This would reduce API calls and thus reduce network load and increase faster reload.
+  <img src="/sessionstorage.png" alt="session storage">
 
 ## Folder Structure
 
@@ -36,8 +40,6 @@ react-rmdb/src/
 ├── API.js          # Different API endpoints
 ├── helpers.js      # Helper functions
 ├
-
-
 ```
 
 ## Scripts
