@@ -4,6 +4,7 @@ import API from '../API';
 
 // Components
 import Button from './Button';
+import Spinner from './Spinner';
 
 // Styles
 import { Wrapper } from './Login.styles';
@@ -16,6 +17,7 @@ const initialState = { username: '', password: '' };
 const Login = () => {
   const [login, setLogin] = useState(initialState);
   const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [user, setUser] = useContext(Context);
   const navigate = useNavigate();
@@ -23,6 +25,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     setError(false);
     const { username, password } = login;
+    setIsLoading(true);
     try {
       // Demo account
       if (e.target.innerText === 'Demo login') {
@@ -35,7 +38,7 @@ const Login = () => {
           demoPassword
         );
         await setUser({ sessionId: sessionId.session_id, username: demoUser });
-
+        setIsLoading(false);
         navigate('/react-movie-db');
         return;
       }
@@ -47,7 +50,7 @@ const Login = () => {
         password
       );
       setUser({ sessionId: sessionId.session_id, username });
-
+      setIsLoading(false);
       navigate('/react-movie-db');
     } catch (error) {
       setError(true);
@@ -79,6 +82,7 @@ const Login = () => {
         placeholder="password"
         required
       />
+      {isLoading && <Spinner />}
       <Button text="Login" callback={handleSubmit} />
       <Button name="demo" text="Demo login" callback={handleSubmit} />
     </Wrapper>
