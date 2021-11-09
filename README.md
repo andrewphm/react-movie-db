@@ -12,8 +12,8 @@
 - Render data fetched by the API. Images, directors, actors, budget, gross.
 - Search bar to search movies.
 - Option to load more movies dynamically.
-- Login feature (to do)
-- Rating feature (to do)
+- Login feature
+- Rating feature
 
 ## Built With
 
@@ -27,8 +27,17 @@
 
 ## Insights
 
-- Improved optimization: Successful api responses are saved in session storage. This would reduce API calls and thus reduce network load and increase faster reload.
+- **Optimization**: Successful api responses are saved in session storage. This reduces the number of API calls and thus reduces network load and increase faster reload times.
   <img src="/sessionstorage.png" alt="session storage">
+- **Clean Code**: I focused on writing clean code and keeping my code decoupled. The helped increase readability and debugging.
+
+```sh
+react-rmbd/src/
+├── config.js     # Initialized all my constant values
+├── API.js        # Held all my REST requests in one folder
+├── helpers.js    # Reusable functions
+├── hooks         # Custom hooks to handle my fetch requests
+```
 
 ## Folder Structure
 
