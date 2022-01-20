@@ -39,7 +39,7 @@ const Login = () => {
         );
         await setUser({ sessionId: sessionId.session_id, username: demoUser });
         setIsLoading(false);
-        navigate('/react-movie-db');
+        navigate('/');
         return;
       }
 
@@ -51,7 +51,7 @@ const Login = () => {
       );
       setUser({ sessionId: sessionId.session_id, username });
       setIsLoading(false);
-      navigate('/react-movie-db');
+      navigate('/');
     } catch (error) {
       setError(true);
     }

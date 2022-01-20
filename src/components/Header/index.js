@@ -24,7 +24,7 @@ const Header = () => {
     <Wrapper>
       {console.log(user)}
       <Content>
-        <Link to="/react-movie-db">
+        <Link to="/">
           <LogoImg src={RMDBLogo} alt="rmdb-logo" />
         </Link>
         <LoginContainer>
